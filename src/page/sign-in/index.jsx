@@ -20,7 +20,7 @@ const Index = () => {
     try{
       const response = await auth.sign_in(form)
       if(response.status === 200){
-        navigate("sign-up")
+        localStorage.setItem("access_token",response?.data?.access_token)
       }
     }catch(error){
       console.log(error);

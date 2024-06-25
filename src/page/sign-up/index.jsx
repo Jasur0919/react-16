@@ -3,6 +3,8 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import {auth} from "@service"
 import { SignUpModal } from '@modal';
+// i
+
 
 const Index = () => {
   const [form, setForm] = useState({})
@@ -20,9 +22,11 @@ const Index = () => {
       const response = await auth.sign_up(form)
       if(response.status === 200){
         setOpen(true)
+        // <ToastContainer />
       }
     }catch(error){
       console.log(error);
+      // <ToastContainer />
     }
   }
   return (
