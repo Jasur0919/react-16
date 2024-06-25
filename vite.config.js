@@ -8,7 +8,8 @@ export default defineConfig({
     alias: [
       {find: "@", replacement: "/src/*"},
       {find: "@page", replacement: "/src/page/index.jsx"},
-      {find: "@service", replacement: "/src/service/index.js"}
+      {find: "@modal", replacement: "/src/components/modal/index.jsx"},
+      {find: "@service", replacement: "/src/service/index.js"},
       {find: "@service", replacement: "/src/service/auth.js"}
       
     ]
