@@ -6,7 +6,7 @@ import { SignUpModal } from '@modal';
 
 const Index = () => {
   const [form, setForm] = useState({})
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
     const {name, value} = event.target
@@ -15,17 +15,17 @@ const Index = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-
-    try{
-      const reponse = await auth.sign_up(form)
-      console.log(reponse);
-    }catch(error){
-      console.log(error);
-    }
+    setOpen(true)
+    // try{
+    //   const reponse = await auth.sign_up(form)
+    //   console.log(reponse);
+    // }catch(error){
+    //   console.log(error);
+    // }
   }
   return (
     <>
-    {/* <SignUpModal open={open} handleClose={() => setOpen(false)}/> */}
+    <SignUpModal open={open} handleClose={() => setOpen(false)}/>
     <div className="w-full h-screen flex items-center justify-center">
       <div className="w-full sm:w-[600px] p-5" >
         <h1 className='text-center text-[40px] my-6'>Register</h1>
