@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import {auth} from "@service"
 import { SignUpModal } from '@modal';
-// i
 
 
 const Index = () => {
