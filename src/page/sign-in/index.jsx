@@ -12,7 +12,7 @@ const Index = () => {
   const handleChange = (event) => {
     const {name, value} = event.target
     setForm({...form, [name]: value})
-  }
+  } 
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -21,6 +21,7 @@ const Index = () => {
       const response = await auth.sign_in(form)
       if(response.status === 200){
         localStorage.setItem("access_token",response?.data?.access_token)
+        navigate("/")
       }
     }catch(error){
       console.log(error);
