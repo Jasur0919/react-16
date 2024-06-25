@@ -106,7 +106,7 @@ import Typography from '@mui/material/Typography';
 import { useSpring, animated } from '@react-spring/web';
 import { Button, TextField } from '@mui/material';
 import { useState, forwardRef } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const {
@@ -166,10 +166,14 @@ export default function SpringModal({open, handleClose}) {
 //   const handleOpen = () => setOpen(true);
 //   const handleClose = () => setOpen(false);
 const [code, setCode] = useState("")
+const navigate = useNavigate()
 const handleSubmit = (e) => {
-    e,preventDefault()
+    e.preventDefault()
     console.log(code);
+    navigate("/")
 }
+
+
   return (
     <div>
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
@@ -191,9 +195,9 @@ const handleSubmit = (e) => {
             <Typography id="spring-modal-title" variant="h6" sx={{marginY: "20px", textAlign: "center"}} component="h2">
               Enter Verification Code
             </Typography>
-            <form onClick={handleSubmit} className='flex flex-col gap-5'>
+            <form className='flex flex-col gap-5'>
                  <TextField type='text' onChange={(e) => setCode(e.target.value)}  fullWidth label="Code" id="code" />
-                 <Button variant='contained' type='submit'>Sign up</Button>
+                 <Button  onClick={handleSubmit} variant='contained' type='submit'>Sign up</Button>
             </form>
           </Box>
         </Fade>

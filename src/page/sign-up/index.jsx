@@ -15,13 +15,15 @@ const Index = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    setOpen(true)
-    // try{
-    //   const reponse = await auth.sign_up(form)
-    //   console.log(reponse);
-    // }catch(error){
-    //   console.log(error);
-    // }
+  
+    try{
+      const response = await auth.sign_up(form)
+      if(response.status === 200){
+        setOpen(true)
+      }
+    }catch(error){
+      console.log(error);
+    }
   }
   return (
     <>
